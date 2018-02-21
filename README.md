@@ -22,6 +22,8 @@ npm install
 
 ````bash
 npm run dev
-http://localhost:3000/
+http://localhost:4000/
+GraphiQL:
+http://localhost:4000/graphql
 ````
 
