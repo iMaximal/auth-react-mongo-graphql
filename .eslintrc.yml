@@ -24,7 +24,9 @@ rules:
   comma-dangle:
     - 2
     - always-multiline
-  semi: 0
+  semi:
+    - error
+    - never
   prefer-destructuring: 1
   import/imports-first: 0
   import/newline-after-import: 0
