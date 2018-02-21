@@ -24,4 +24,4 @@ const mutation = new GraphQLObjectType({
   },
 })
 
-module.export = mutation
+module.exports = mutation
