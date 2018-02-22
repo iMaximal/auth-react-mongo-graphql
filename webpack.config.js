@@ -20,5 +20,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'client/index.html',
     }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 }
