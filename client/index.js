@@ -7,9 +7,15 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { ApolloProvider } from 'react-apollo'
 import App from './containers/App/App'
 
+const link = new HttpLink({
+  uri: '/graphql',
+  // Additional fetch options like `credentials` or `headers`
+  credentials: 'same-origin',
+})
+
 const client = new ApolloClient({
   dataIdFromObject: (o) => o.id,
-  link: new HttpLink(),
+  link,
   cache: new InMemoryCache(),
 })
 
