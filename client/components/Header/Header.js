@@ -1,31 +1,65 @@
 import React, { Component } from 'react'
-import { graphql } from 'react-apollo'
-import query from '../../queries/CurrentUser'
+import { graphql, compose } from 'react-apollo'
+import { Link } from 'react-router-dom'
+import CurrentUser from '../../queries/CurrentUser'
+import Logout from '../../mutations/Logout'
 
 class Header extends Component {
+  onLogout = () => {
+    this.props.logout({
+      refetchQueries: [{
+        query: CurrentUser,
+      }],
+    })
+  }
+
   renderButtons() {
     const { loading, user } = this.props.data
 
-    if (this.props.data.loading) {
+    if (loading) {
       return <div>Loading...</div>
     }
 
     if (user) {
-      return <div>Logout</div>
-    } else {
-      return <div>You're not signed in</div>
+      return (
+        <li>
+          <a onClick={this.onLogout}>Logout</a>
+        </li>
+      )
     }
+    return (
+      <React.Fragment>
+        <li>
+          <Link to="/singup">
+            Signup
+          </Link>
+        </li>
+        <li>
+          <Link to="/login">
+             Login
+          </Link>
+        </li>
+      </React.Fragment>
+    )
   }
 
   render() {
     return (
       <nav>
         <div className="nav-wrapper">
-          {this.renderButtons()}
+          <Link to="/" className="brand-logo left">
+            Home
+          </Link>
+          <ul className="right">
+            {this.renderButtons()}
+          </ul>
         </div>
       </nav>
     )
   }
 }
 
-export default graphql(query)(Header)
+export default compose(
+  graphql(CurrentUser),
+  graphql(Logout, { name: 'logout' })
+)(Header)
