@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classes from './AuthForm.css'
 
 class AuthForm extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class AuthForm extends Component {
     }
   }
 
-  handleChangeInput= (event) => {
+  handleChangeInput = (event) => {
     const { name, value } = event.target
     this.setState({
       [name]: value,
@@ -52,6 +53,11 @@ class AuthForm extends Component {
               type="password"
             />
           </div>
+
+          <div className={classes.error}>
+            {this.props.errors.map((error) => (<div key={error}>{error}</div>))}
+          </div>
+
           <button className="btn">Submit</button>
         </form>
       </div>
