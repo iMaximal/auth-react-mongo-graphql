@@ -7,7 +7,7 @@ import AuthForm from '../../components/AuthForm/AuthForm'
 
 
 const App = () => (
-  <div>
+  <div className="container">
     <Header />
     <Switch>
       <Route exact path="/" component={Home} />
