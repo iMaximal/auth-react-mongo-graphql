@@ -30,7 +30,7 @@ class Header extends Component {
     return (
       <React.Fragment>
         <li>
-          <Link to="/singup">
+          <Link to="/signup">
             Signup
           </Link>
         </li>
