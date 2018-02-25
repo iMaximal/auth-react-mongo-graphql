@@ -18,6 +18,7 @@ class LoginForm extends Component {
       variables: { email, password },
       refetchQueries: [{ query: CurrentUser }],
     })
+      .then(() => this.props.history.push('/'))
       .catch((res) => {
         const errors = res.graphQLErrors.map((error) => error.message)
 
