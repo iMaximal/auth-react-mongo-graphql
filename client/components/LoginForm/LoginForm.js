@@ -10,6 +10,7 @@ class LoginForm extends Component {
       variables: { email, password },
       refetchQueries: [{ query: CurrentUser }],
     })
+      .catch((error) => { debugger })
   }
 
   render() {
