@@ -23,7 +23,7 @@ class Header extends Component {
     if (user) {
       return (
         <li>
-          <a onClick={this.onLogout}>Logout</a>
+          <a title={`Logout, ${user.email}?`} onClick={this.onLogout}>Logout</a>
         </li>
       )
     }
