@@ -5,6 +5,7 @@ import Home from './../../components/Home/Home'
 import SignupForm from '../../components/SignupForm/SignupForm'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import Dashboard from '../../components/Dashboard/Dashboard'
+import requireAuth from '../../hoc/requireAuth/requireAuth'
 
 
 const App = () => (
@@ -14,7 +15,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route path="/signup" component={SignupForm} />
       <Route path="/login" component={LoginForm} />
-      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/dashboard" component={requireAuth(Dashboard)} />
     </Switch>
   </div>
 )
