@@ -1,14 +1,15 @@
-# auth-graphql-starter
+# Application with Auth based on GraphQL
 
-Starter project from a GraphQL course on Udemy.com - Section 3!
+My project from a GraphQL course on Udemy.com - Section 3!
 
-Technologies: Node.JS, Express-GraphQL, Apollo, Passport, MongoDB, Mongoose, React.
+Technologies: Node.JS, Express-GraphQL, Apollo 2, Passport, MongoDB, Mongoose, React 16.
 
 ## Description
 
 App shows how to realize the auth using GraphQL.
 
 The original course on Udemy used deprecated dependencies.
+
 I figured out and made using the latest technologies.
 
 
