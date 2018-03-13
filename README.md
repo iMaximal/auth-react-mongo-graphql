@@ -28,3 +28,6 @@ GraphiQL:
 http://localhost:4000/graphql
 ````
 
+Login: text@example.com
+Password: password
+
